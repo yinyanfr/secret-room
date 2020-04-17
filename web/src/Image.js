@@ -4,7 +4,7 @@ const Image = ({src}) => {
 
     return (
         <img
-          alt="image"
+          alt="chat image"
           src={`data:image/png;base64, ${src}`}
         />
     )

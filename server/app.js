@@ -1,5 +1,7 @@
 const express = require('express')
 const app = express()
+const bodyParser = require("body-parser")
+const json = bodyParser.json()
 const http = require('http').Server(app)
 const io = require('socket.io')(http)
 const parse = require("url-parse")
@@ -15,6 +17,13 @@ io.on("connection", socket => {
     socket.on("send", msg => {
         io.in(room).emit("receive", msg)
     })
+})
+
+app.post("/img", json, (req, res) => {
+    const room = getRoom(req.headers.referer)
+    const {msg} = req.body
+    console.log(msg.type)
+    io.in(room).emit("receive", msg)
 })
 
 app.use(express.static(path.join(__dirname, "build")))
