@@ -2,12 +2,14 @@
 
 Disposable web chat room application with image support.
 
-[Demo](http://chat.yinyan.fr)
+[Demo](http://chat.yinyan.fr/demo)
 
 ## Get Started
-- send text :
+- enter a room :
+url/room_name
+    - example : http://chat.yinyan.fr/demo
+- send text : 
 type and press enter
-
 - send image :
 copy and paste image
 
